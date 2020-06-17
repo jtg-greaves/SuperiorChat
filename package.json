@@ -1,11 +1,11 @@
 {
-  "name": "SuperiorChat",
-  "version": "0.0.1",
-  "description": "A web-based Minecraft server chat client.",
-  "devDependencies": {
-    "express": "^4.14.0",
-    "minecraft-protocol": "^1.1.0",
-    "body-parser": "^1.15.2",
+  "name": "superiorchat",
+  "version": "1.0.0",
+  "description": "A tool for MineSuperior staff",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "minecraft-protocol": "^1.12.2",
     "prismarine-tokens": "^1.0.3",
     "socket.io": "^2.3.0"

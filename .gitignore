@@ -8,7 +8,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Package Lock
-package-lock.json
 
 # NodeJS
 NodeJS/
