@@ -1,6 +1,6 @@
 ﻿const express = require("express");
 const app = express();
-const port = 8080;
+const port = 5000;
 const util = require("util");
 const bodyParser = require("body-parser");
 const mcproto = require("minecraft-protocol");
