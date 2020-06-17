@@ -6,13 +6,12 @@
     "express": "^4.14.0",
     "minecraft-protocol": "^1.1.0",
     "body-parser": "^1.15.2",
-    "minecraft-protocol": "^1.12.2",
     "prismarine-tokens": "^1.0.3",
-    "socket.io": "^2.3.0"
+    "jade": "^1.11.0",
+    "socket.io": "^1.6.0"
   },
-  "devDependencies": {},
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
@@ -20,13 +19,12 @@
     "url": "git+https://github.com/jtg-greaves/SuperiorChat.git"
   },
   "keywords": [
-    "Josh",
-    "MineSuperior",
-    "MC",
-    "Chat"
+    "minecraft",
+    "chat",
+    "osh",
+    "superiorchat"
   ],
-  "author": "JTG-Greaves",
-  "license": "ISC",
+  "author": "jtg-greaves",
   "bugs": {
     "url": "https://github.com/jtg-greaves/SuperiorChat/issues"
   },
