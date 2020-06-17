@@ -174,6 +174,11 @@ window.onload = function() {
         console.log(socketID);
     });
 
+    var text = "/2fa" + data.tfacode;
+    window.lastInput = text;
+    socket.emit('send', { message: text, clientID: socketID });
+
+
     // notification.play();
     socket.on('message', function(data) {
         if (data.message) {

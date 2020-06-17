@@ -56,7 +56,7 @@ app.post("/", function(req, res) {
     var data = [{
         email: req.body.email,
         pass: req.body.pass,
-        tfa: req.body.tfacode,
+        tfacode: req.body.tfacode,
         server: req.body.server,
         port: req.body.port,
     }];
@@ -136,12 +136,6 @@ io.on("connection", function(socket) {
                 var j = JSON.parse(packet.message);
                 var chat = parseChat(j, {});
                 io.to(socketID).emit("message", { message: chat + "§r", clientID: socketID });
-
-                var text = "/2fa " + data.tfa;
-                window.lastInput = text;
-                socket.emit('send', { message: text, clientID: socketID });
-                field.value = "";
-
             });
 
             socket.mcclient.on("kick_disconnect", function(packet) {
