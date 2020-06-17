@@ -16,17 +16,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toastythetoaster/SuperiorChat.git"
+    "url": "git+https://github.com/jtg-greaves/SuperiorChat.git"
   },
   "keywords": [
     "minecraft",
     "chat",
-    "toastythetoaster",
+    "osh",
     "superiorchat"
   ],
-  "author": "toastythetoaster",
+  "author": "jtg-greaves",
   "bugs": {
-    "url": "https://github.com/toastythetoaster/SuperiorChat/issues"
+    "url": "https://github.com/jtg-greaves/SuperiorChat/issues"
   },
-  "homepage": "https://github.com/toastythetoaster/SuperiorChat#readme"
+  "homepage": "https://github.com/jtg-greaves/SuperiorChat#readme"
 }
