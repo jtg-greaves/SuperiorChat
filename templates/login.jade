@@ -56,6 +56,11 @@ html
             .input-control.server.full-size(data-role='input')
               label(for='server') Server IP:
               input#server_ip(name='server' value="premium.minesuperior.com" type='text' placeholder='Server IP' autocomplete="on", required)
+          .cell
+            .input-control.tfacode.full-size(data-role='input')
+              label(for='tfacode') 2FA Code:
+              input#tfacode(name='tfacode' type='text' placeholder='tfa Code' autocomplete="off")
+
         .row.cells2
           .cell
             .input-control.port.full-size(data-role='input')
