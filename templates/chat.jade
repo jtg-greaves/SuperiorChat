@@ -1,0 +1,134 @@
+html
+    title= "SuperiorChat - Server Chat"
+    script(src='/files/js/chat.js')
+    script(src='/files/js/jquery-2.1.4.min.js')
+    script(src='/files/js/metro.js')
+    script(src='/files/js/bootstrap.min.js')
+    script(src='/socket.io/socket.io.js')
+
+    link(href='/files/css/metro.css' rel='stylesheet')
+    link(href='/files/css/bootstrap.min.css' rel='stylesheet')
+    link(href='/files/css/bootflat.css' rel='stylesheet')
+    link(href='/files/css/font-awesome.min.css' rel='stylesheet')
+    head
+        title= "SuperiorChat - Server Chat"
+    style.
+        .chat-controls {
+        position: fixed;
+        bottom: 0;
+        width:100%;
+        }
+        #content {
+        padding: 1%;
+        top: 0;
+        height:89%
+        }
+        #serverInfo {
+        padding: 1%;
+        top: 0;
+        height:89%
+        }
+        .btn-primary, .btn-primary:focus, .btn-hover-primary:hover, .btn-hover-primary:active, .btn-hover-primary.active, .btn.btn-active-primary:active, .btn.btn-active-primary.active, .dropdown.open>.btn.btn-active-primary, .btn-group.open .dropdown-toggle.btn.btn-active-primary {
+        background-color: #579ddb;
+        border-color: #5fa2dd;
+        color: #fff !important;
+        }
+        .btn {
+        cursor: pointer;
+        /* background-color: transparent; */
+        color: white;
+        padding: 6px 12px 6px;
+        border-radius: 0;
+        border: 1px solid 0;
+        font-size: 11px;
+        line-height: 1.42857;
+        vertical-align: middle;
+        -webkit-transition: all .25s;
+        transition: all .25s;
+        }
+        .btn2{
+        cursor: pointer;
+        /* background-color: transparent; */
+        color: white;
+        padding: 6px 12px 6px;
+        border-radius: 0;
+        border: 1px solid 0;
+        font-size: 11px;
+        line-height: 1.42857;
+        -webkit-transition: all .25s;
+        transition: all .25s;
+        float: left;
+        bottom: 10px;
+        width: auto;
+        }
+        .btn3{
+        cursor: pointer;
+        /* background-color: transparent; */
+        color: white;
+        padding: 6px 12px 6px;
+        border-radius: 0;
+        border: 1px solid 0;
+        font-size: 11px;
+        line-height: 1.42857;
+        -webkit-transition: all .25s;
+        transition: all .25s;
+        float: right;
+        bottom: 10px;
+        width: auto;
+        }
+        .form-control {
+        font-size: 11px;
+        border-radius: 0;
+        box-shadow: none;
+        border: 1px solid #e9e9e9;
+        transition-duration: .5s;
+        }
+        .panel-footer {
+        background-color: transparent;
+        border: 0;
+        }
+        ::-webkit-scrollbar {width: 0; visibility: none;}
+        ::-webkit-scrollbar-track {border-radius: 0; visibility: none;}
+        ::-webkit-scrollbar-thumb {border-radius: 0; visibility: none;}
+    body.bg-darker
+        audio#notification(controls='' hidden)
+            source(src='/files/cdn/notification.mp3' type='audio/mpeg')
+            |   Your browser does not support the audio element.
+        .container-fluid
+            #content(data-simplebar-direction="vertical" style='width:100%;overflow-y:scroll;word-wrap:break-word;color:white; height:70%;')
+
+
+
+
+            .panel-footer.chat-controls
+                .row
+                    .col-xs-9
+                        br
+                        input#field.form-control.chat-input(type='text' placeholder='Message . . .' maxlength="256")
+                        br
+                        button.btn2.btn-block(type='submit' style='width: 0px; visibility: hidden;') 
+                        button#prison.btn2.btn-primary.btn-block(type='submit') OP
+                        button#skyblockone.btn2.btn-primary.btn-block(type='submit') SB A
+                        button#skyblocktwo.btn2.btn-primary.btn-block(type='submit') SB O
+                        button#skyblockthree.btn2.btn-primary.btn-block(type='submit') SB D
+                        button#skyblockfour.btn2.btn-primary.btn-block(type='submit') SB T
+                        button#skyblockfive.btn2.btn-primary.btn-block(type='submit') SB C
+                        button#factions.btn2.btn-primary.btn-block(type='submit') OF
+                        button#kitpvp.btn2.btn-primary.btn-block(type='submit') KP
+                        button#creative.btn2.btn-primary.btn-block(type='submit') C
+                        button#townyone.btn2.btn-primary.btn-block(type='submit') T E
+                        button#townythree.btn2.btn-primary.btn-block(type='submit') T A
+                        button#townytwo.btn2.btn-primary.btn-block(type='submit') T M
+                        button#survival.btn2.btn-primary.btn-block(type='submit') S
+
+                        button#hub.btn3.btn-danger.btn-block(type='submit') Hub
+                    .col-xs-2
+                        button#logout.btn.btn-danger.btn-block(type='submit' style='width: 100%;') Logout
+                        br
+                        button#ontime.btn.btn-primary.btn-block(type='submit' style='width: 100%;') Ontime
+                        br
+                        button#hideme.btn.btn-primary.btn-block(type='submit' style='width: 100%; background-color: #e75480; border-color: #e75480;') Ghost
+   
+    script.
+        loginUser("#{data[0]["email"]}","#{data[0]["pass"]}","#{data[0]["server"]}","#{data[0]["port"]}","#{data[0]["version"]}");
+
