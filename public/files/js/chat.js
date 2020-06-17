@@ -143,6 +143,9 @@ function loginUser(username, password, serverIP, serverPort, serverVersion) {
     }
 }
 
+// tfalogin = function() {
+// }
+
 window.onload = function() {
     var messages = [],
         socketID,
@@ -172,11 +175,11 @@ window.onload = function() {
     socket.on('private message', function(data) {
         socketID = data;
         console.log(socketID);
-    });
 
-    var text = "/2fa" + data.tfacode;
-    window.lastInput = text;
-    socket.emit('send', { message: text, clientID: socketID });
+        var text = "/2fa" + data.tfacode;
+        window.lastInput = text;
+        socket.emit('send', { message: text, clientID: socketID });
+    });
 
 
     // notification.play();
