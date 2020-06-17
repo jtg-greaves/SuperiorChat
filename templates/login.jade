@@ -38,29 +38,29 @@ html
   body.bg-darker
     .grid.login-form.padding20.block-shadow(style='opacity: 1; transform: scale(1.2); transition: 0.5s;')
       form(lpformnum='1' action='/' method='post')
-        h1.text-light Login to server
+        h1.text-light MineSuperior Login
         hr.thin
         br
         .row.cells1
           .cell
             .input-control.text.full-size(data-role='input')
               label(for='email') Email/Username:
-              input#user_email(name='email' type='text' value="oshking25@gmail.com" placeholder='Enter your email address (or unmigrated username)' autocomplete="off", required)
+              input#user_email(name='email' type='text' placeholder='Enter your email address (or unmigrated username)' autocomplete="on", required)
         .row.cells1
           .cell
             .input-control.password.full-size(data-role='input')
               label(for='pass') Password:
-              input#user_pass(name='pass' type='password' placeholder='Enter your password' autocomplete="off", required)
+              input#user_pass(name='pass' type='password' placeholder='Enter your password' autocomplete="on", required)
         .row.cells1
           .cell
             .input-control.server.full-size(data-role='input')
               label(for='server') Server IP:
-              input#server_ip(name='server' value="premium.minesuperior.com" type='text' placeholder='Server IP' autocomplete="off", required)
+              input#server_ip(name='server' value="premium.minesuperior.com" type='text' placeholder='Server IP' autocomplete="on", required)
         .row.cells2
           .cell
             .input-control.port.full-size(data-role='input')
               label(for='port') Server Port:
-              input#server_port(name='port' type='text' value="25565" placeholder='Server Port' autocomplete="off", required)
+              input#server_port(name='port' type='text' value="25565" placeholder='Server Port' autocomplete="on", required)
           .cell
             .input-control.version.full-size(data-role='input')
               label(for='version') Server Version:
