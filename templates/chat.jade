@@ -104,7 +104,7 @@ html
                 .row
                     .col-xs-9
                         br
-                        input#field.form-control.chat-input(type='text' placeholder='Message . . .' maxlength="256")
+                        input#field.form-control.chat-input(type='text' placeholder='Message . . .' maxlength="256" style="width: 100%")
                         br
                         button.btn2.btn-block(type='submit' style='width: 0px; visibility: hidden;') 
                         button#prison.btn2.btn-primary.btn-block(type='submit') OP
@@ -123,10 +123,12 @@ html
 
                         button#hub.btn3.btn-danger.btn-block(type='submit') Hub
                     .col-xs-2
+                        button#sendmessage.btn.btn-primary.btn-block(type='submit' style="width: 100%") Send
+
                         button#logout.btn.btn-danger.btn-block(type='submit' style='width: 100%;') Logout
-                        br
+                        
                         button#ontime.btn.btn-primary.btn-block(type='submit' style='width: 100%;') Ontime
-                        br
+                        
                         button#hideme.btn.btn-primary.btn-block(type='submit' style='width: 100%; background-color: #e75480; border-color: #e75480;') Ghost
    
     script.

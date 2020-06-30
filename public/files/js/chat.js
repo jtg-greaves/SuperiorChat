@@ -165,6 +165,7 @@ window.onload = function() {
         ontimeButton = document.getElementById("ontime"),
         logoutButton = document.getElementById("logout"),
         content = document.getElementById("content"),
+        sendmessage = document.getElementById("sendmessage"),
         notification = document.getElementById("notification");
     socket = io();
 
@@ -215,6 +216,12 @@ window.onload = function() {
                 }
             }
 
+            sendmessage.onclick = function() {
+                var text = field.value;
+                window.lastInput = text;
+                socket.emit('send', { message: text, clientID: socketID });
+                field.value = "";
+            };
 
 
 

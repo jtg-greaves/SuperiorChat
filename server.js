@@ -56,7 +56,6 @@ app.post("/", function(req, res) {
     var data = [{
         email: req.body.email,
         pass: req.body.pass,
-        tfacode: req.body.tfacode,
         server: req.body.server,
         port: req.body.port,
     }];
