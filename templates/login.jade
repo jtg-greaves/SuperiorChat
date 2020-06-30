@@ -46,22 +46,16 @@ html
             .input-control.text.full-size(data-role='input')
               label(for='email') Email/Username:
               input#user_email(name='email' type='text' placeholder='Enter your email address (or unmigrated username)' autocomplete="on", required)
-        .row.cells2
+        .row.cells1
           .cell
             .input-control.password.full-size(data-role='input')
               label(for='pass') Password:
               input#user_pass(name='pass' type='password' placeholder='Enter your password' autocomplete="on", required)
-          .cell
-            .input-control.tfacode.full-size(data-role='input')
-              label(for='tfacode') 2FA Code:
-              input#tfacode(name='tfacode' type='text' placeholder='tfa Code' autocomplete="off")
         .row.cells1
           .cell
             .input-control.server.full-size(data-role='input')
               label(for='server') Server IP:
               input#server_ip(name='server' value="premium.minesuperior.com" type='text' placeholder='Server IP' autocomplete="on", required)
-
-
         .row.cells2
           .cell
             .input-control.port.full-size(data-role='input')
