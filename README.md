@@ -13,4 +13,4 @@ A web-based Minecraft server chat interface specifically designed for those who 
 2.  Open a browser while SuperiorChat is running and type `localhost:8080` in the address bar
 
 ### Credits
-Project was originally developed by [ToastyTheToaster](https://github.com/toastythetoaster/SuperiorChat) an Ex Staff member who used the code from [ReduxRedstone](https://github.com/ReduxRedston). I ([JTG-Greave](https://github.com/jtg-greaves)) has decided to continue this trend and have made significant improvements transforming it from just a chat based client to a staff tool. 
+Project was originally developed by [ToastyTheToaster](https://github.com/toastythetoaster/SuperiorChat) an Ex Staff member who used the code from [ReduxRedstone](https://github.com/ReduxRedston). I ([JTG-Greaves](https://github.com/jtg-greaves)) has decided to continue this trend and have made significant improvements transforming it from just a chat based client to a staff tool. 
