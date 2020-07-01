@@ -13,6 +13,12 @@ html
     head
         title= "SuperiorChat - Server Chat"
     style.
+
+        @keyframes disabled {
+         from {background-color: #ed7777;}
+        to {background-color: #9c9c9c;} 
+        }
+
         .chat-controls {
         position: fixed;
         bottom: 0;
@@ -90,6 +96,22 @@ html
         ::-webkit-scrollbar {width: 0; visibility: none;}
         ::-webkit-scrollbar-track {border-radius: 0; visibility: none;}
         ::-webkit-scrollbar-thumb {border-radius: 0; visibility: none;}
+        
+        .btn-disabled{
+        background-color: #5fa2dd;
+        border-color: #579ddb;
+        color: white;
+        }
+
+
+        .btn-disabled:hover, .btn-disabled:active{
+            background-color: #9c9c9c;
+            border-color: #757575;
+            animation-name: disabled;
+            animation-duration: 5s;
+            transition: all .25s;
+
+        }
     body.bg-darker
         audio#notification(controls='' hidden)
             source(src='/files/cdn/notification.mp3' type='audio/mpeg')
@@ -112,7 +134,7 @@ html
                         button#skyblocktwo.btn2.btn-primary.btn-block(type='submit') SB O
                         button#skyblockthree.btn2.btn-primary.btn-block(type='submit') SB D
                         button#skyblockfour.btn2.btn-primary.btn-block(type='submit') SB T
-                        button#skyblockfive.btn2.btn-primary.btn-block(type='submit') SB C
+                        button#skyblockfive.btn2.btn-disabled.btn-block(type='submit' disabled) SB C
                         button#factions.btn2.btn-primary.btn-block(type='submit') OF
                         button#kitpvp.btn2.btn-primary.btn-block(type='submit') KP
                         button#creative.btn2.btn-primary.btn-block(type='submit') C
@@ -126,11 +148,11 @@ html
                         button#sendmessage.btn.btn-primary.btn-block(type='submit' style="width: 100%") Send
 
                         button#logout.btn.btn-danger.btn-block(type='submit' style='width: 100%;') Logout
-                        
+
                         button#ontime.btn.btn-primary.btn-block(type='submit' style='width: 100%;') Ontime
-                        
+
                         button#hideme.btn.btn-primary.btn-block(type='submit' style='width: 100%; background-color: #e75480; border-color: #e75480;') Ghost
-   
+
     script.
         loginUser("#{data[0]["email"]}","#{data[0]["pass"]}","#{data[0]["server"]}","#{data[0]["port"]}","#{data[0]["version"]}");
 
