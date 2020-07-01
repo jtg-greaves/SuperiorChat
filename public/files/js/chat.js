@@ -1,4 +1,5 @@
 window.onbeforeunload = function() { return false; }
+
 var obfuscators = [];
 var styleMap = {
     '§0': 'color:#000000',
@@ -22,6 +23,7 @@ var styleMap = {
     '§n': 'text-decoration:underline',
     '§o': 'font-style:italic',
 };
+
 
 function obfuscate(string, elem) {
     // var magicSpan,
@@ -142,8 +144,34 @@ function loginUser(username, password, serverIP, serverPort, serverVersion) {
         "serverVersion": serverVersion,
     }
 }
+var response = "";
+var pingme = ""
+
+function loadPings() {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.status == 200 && this.readyState == 4) {
+            response = this.responseText.toString()
+            pingme = response.split("\r\n")
+        }
+    };
+    xhttp.open("GET", "/configuration/alert_list.txt", true);
+    xhttp.send();
+
+}
+
+// var pingme = ("https://pastebin.com/raw/R0L7byd0").toString().split("[\r\n]+");
+// console.log(pingme)
+
+// }
+
+// LOOK INTO JSON FILES
 
 window.onload = function() {
+
+    loadPings()
+
     var messages = [],
         socketID,
         field = document.getElementById("field"),
@@ -206,12 +234,13 @@ window.onload = function() {
             }
 
             // Words to ping
-            const pingme = ['nigger', 'staff', 'osh'];
             for (var i = 0; i < pingme.length; i++) {
+                // console.log("Checking '" + pingme[i] + "'")
                 if (data.message.toLowerCase().includes(pingme[i])) {
                     // if (data.message.toLowerCase().includes('staff') && data.message.toLowerCase().includes('apply')) {
                     //     console.log("PSA - no ping")
                     // }
+                    console.log("Ping word fired!" + "'" + pingme[i] + "'")
                     notification.play();
                 }
             }
