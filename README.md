@@ -1,9 +1,5 @@
 # SuperiorChat
-A web-based Minecraft server chat interface.
-
-## NOTICE!!!
-As of November 24, 2018 all work on this repo has been diverted towards a private repo and this web-based client has been abandoned. That's not to say that it doesn't work, it's just that development for it has stopped.
-Work on this repo may or may not continue at a later date.
+A web-based Minecraft server chat interface specifically designed for those who moderate at [MineSuperior](https://minesuperior.com)
 
 ## Installation Instructions:
 1.  Download and install NodeJS from [here](https://nodejs.org/en/download/ "Download NodeJS")
@@ -15,3 +11,6 @@ Work on this repo may or may not continue at a later date.
 ## Running SuperiorChat:
 1.  When that finishes, run the SuperiorChat.bat (Windows) or SuperiorChat.sh (Windows/macOSX/Linux w/ Git Bash) to start the web-server
 2.  Open a browser while SuperiorChat is running and type `localhost:8080` in the address bar
+
+### Credits
+Project was originally developed by [ToastyTheToaster](https://github.com/toastythetoaster/SuperiorChat) an Ex Staff member who used the code from [ReduxRedstone](https://github.com/ReduxRedston). I ([JTG-Greave](https://github.com/jtg-greaves)) has decided to continue this trend and have made significant improvements transforming it from just a chat based client to a staff tool. 
