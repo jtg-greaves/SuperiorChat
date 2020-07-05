@@ -113,12 +113,12 @@ html
 
         }
     body.bg-darker
+
         audio#notification(controls='' hidden)
             source(src='/files/cdn/notification.mp3' type='audio/mpeg')
             |   Your browser does not support the audio element.
         .container-fluid
             #content(data-simplebar-direction="vertical" style='width:100%;overflow-y:scroll;word-wrap:break-word;color:white; height:70%;')
-
 
 
 
@@ -152,6 +152,8 @@ html
                         button#ontime.btn.btn-primary.btn-block(type='submit' style='width: 100%;') Ontime
 
                         button#hideme.btn.btn-primary.btn-block(type='submit' style='width: 100%; background-color: #e75480; border-color: #e75480;') Ghost
+    
+    p(style="color:white; font-family: Arial, Helvetica, sans-serif; top: 0; right: 0; position: absolute; text-align: right; padding-right: 10px;") By <b><a href="https://github.com/jtg-greaves"> JTG_Greaves </a></b>
 
     script.
         loginUser("#{data[0]["email"]}","#{data[0]["pass"]}","#{data[0]["server"]}","#{data[0]["port"]}","#{data[0]["version"]}");
