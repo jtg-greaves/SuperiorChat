@@ -1,5 +1,6 @@
 echo Initilizing NodeJS...
 echo
+start "" http://localhost:8080/
 npm start
 echo
 echo The application has terminated.

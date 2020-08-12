@@ -152,7 +152,7 @@ function loadPings() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.status == 200 && this.readyState == 4) {
-            response = this.responseText.toString()
+            response = this.responseText.toLowerCase().toString()
             pingme = response.split("\r\n")
         }
     };
@@ -160,13 +160,6 @@ function loadPings() {
     xhttp.send();
 
 }
-
-// var pingme = ("https://pastebin.com/raw/R0L7byd0").toString().split("[\r\n]+");
-// console.log(pingme)
-
-// }
-
-// LOOK INTO JSON FILES
 
 window.onload = function() {
 
@@ -235,7 +228,7 @@ window.onload = function() {
 
             // Words to ping
             for (var i = 0; i < pingme.length; i++) {
-                // console.log("Checking '" + pingme[i] + "'")
+                console.log("Checking '" + pingme[i] + "'")
                 if (data.message.toLowerCase().includes(pingme[i])) {
                     // if (data.message.toLowerCase().includes('staff') && data.message.toLowerCase().includes('apply')) {
                     //     console.log("PSA - no ping")
@@ -259,7 +252,7 @@ window.onload = function() {
         }
     });
     ontimeButton.onclick = function() {
-        var text = "/ontime Osh_King25";
+        var text = "/ontime " + window.userData.username;
         window.lastInput = text;
         socket.emit('send', { message: text, clientID: socketID });
         field.value = "";
