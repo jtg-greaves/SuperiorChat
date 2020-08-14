@@ -85,4 +85,3 @@ typings/
 
 # Login configuration
 public/configuration/login_details.txt
-touch public/configuration/login_details.txt
