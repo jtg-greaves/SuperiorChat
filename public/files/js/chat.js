@@ -145,7 +145,8 @@ function loginUser(username, password, serverIP, serverPort, serverVersion) {
     }
 }
 var response = "";
-var pingme = ""
+var pingme = "";
+var username = "";
 
 function loadPings() {
 
@@ -161,9 +162,24 @@ function loadPings() {
 
 }
 
+function loadUsername() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.status == 200 && this.readyState == 4) {
+            response = this.responseText.toString()
+            array = response.split("\r\n")
+            username = array[3];
+            console.log("Username set to: " + username)
+        }
+    };
+    xhttp.open("GET", "/configuration/login_details.txt", true);
+    xhttp.send();
+}
+
 window.onload = function() {
 
     loadPings()
+    loadUsername()
 
     var messages = [],
         socketID,
@@ -174,6 +190,7 @@ window.onload = function() {
         skyblockthreeButton = document.getElementById("skyblockthree"),
         skyblockfourButton = document.getElementById("skyblockfour"),
         skyblockfiveButton = document.getElementById("skyblockfive"),
+        skyblocksixButton = document.getElementById("skyblocksix"),
         factionsButton = document.getElementById("factions"),
         kitpvpButton = document.getElementById("kitpvp"),
         creativeButton = document.getElementById("creative"),
@@ -220,20 +237,20 @@ window.onload = function() {
 
             // Caps check
             uppers = (data.message.replace(/[^A-Z]/g, "").length);
-            pct = uppers / (data.message.length - uppers)
-            if (pct > 0.5) {
+            pct = uppers / data.message.length;
+            if (pct >= 0.5) {
                 console.log(pct + ";" + uppers + "/" + data.message.length)
                 notification.play()
             }
 
             // Words to ping
             for (var i = 0; i < pingme.length; i++) {
-                console.log("Checking '" + pingme[i] + "'")
+                // console.log("Checking '" + pingme[i] + "'")
                 if (data.message.toLowerCase().includes(pingme[i])) {
                     // if (data.message.toLowerCase().includes('staff') && data.message.toLowerCase().includes('apply')) {
                     //     console.log("PSA - no ping")
                     // }
-                    console.log("Ping word fired!" + "'" + pingme[i] + "'")
+                    console.log("Ping word fired!" + "'" + pingme[i] + "' - Playing notification...")
                     notification.play();
                 }
             }
@@ -246,13 +263,12 @@ window.onload = function() {
             };
 
 
-
         } else {
             console.log("There is a problem:", data);
         }
     });
     ontimeButton.onclick = function() {
-        var text = "/ontime " + window.userData.username;
+        var text = "/ontime " + username;
         window.lastInput = text;
         socket.emit('send', { message: text, clientID: socketID });
         field.value = "";
@@ -297,6 +313,12 @@ window.onload = function() {
     };
     skyblockfiveButton.onclick = function() {
         var text = "/gserver ms-skyblock-5";
+        window.lastInput = text;
+        socket.emit('send', { message: text, clientID: socketID });
+        field.value = "";
+    };
+    skyblocksixButton.onclick = function() {
+        var text = "/gserver ms-skyblock-6";
         window.lastInput = text;
         socket.emit('send', { message: text, clientID: socketID });
         field.value = "";

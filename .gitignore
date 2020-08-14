@@ -82,3 +82,7 @@ typings/
 # FuseBox cache
 .fusebox/
 >>>>>>> parent of e313df1... Purged the .git{blah blah blah} files
+
+# Login configuration
+public/configuration/login_details.txt
+touch public/configuration/login_details.txt
